@@ -13,4 +13,8 @@
         SELECT * FROM job_inf WHERE id=#{id}
     </select>
 
+    <insert id="addNewJob">
+        INSERT INTO job_inf VALUE (NULL , #{name}, #{remark});
+    </insert>
+
 </mapper>
