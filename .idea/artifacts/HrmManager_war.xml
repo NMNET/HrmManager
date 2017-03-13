@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HrmManager:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="hrm.manager.war">
+      <element id="artifact" artifact-name="HrmManager:war exploded" />
+    </root>
+  </artifact>
+</component>
