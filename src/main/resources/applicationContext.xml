@@ -23,12 +23,16 @@
         <property name="jdbcUrl" value="${url}"/>
         <property name="user" value="${username}"/>
         <property name="password" value="${password}"/>
+        <property name="maxPoolSize" value="${maxPoolSize}"/>
+        <property name="maxIdleTime" value="${maxIdleTime}"/>
+        <property name="minPoolSize" value="${minPoolSize}"/>
+        <property name="initialPoolSize" value="${initialPoolSize}"/>
     </bean>
 
     <!--SqlSessionFactory-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
         <property name="typeAliasesPackage" value="com.nmnet.pojo"/>
     </bean>
@@ -46,6 +50,7 @@
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="query*" read-only="true"/>
+            <tx:method name="select*" read-only="true"/>
             <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>

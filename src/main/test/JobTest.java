@@ -28,15 +28,15 @@ public class JobTest {
 
     @Test
     public void queryJobById() {
-        Job job = jobMapper.queryJobById(10);
+        Job job = jobMapper.queryJobById(8);
         System.out.println(job);
     }
 
     @Test
     public void addNewJob() {
         Job job = new Job();
-        job.setName("董事长1");
-        job.setRemark("董事长1");
+        job.setName("董事长2");
+        job.setRemark("董事长2");
         Integer result = jobMapper.addNewJob(job);
         System.out.println(result);
     }
