@@ -1,15 +1,14 @@
 package com.nmnet.pojo;
 
 
-public class Job implements java.io.Serializable{
+public class Dept implements java.io.Serializable{
 
-	private Integer id;			// id
-	private String name;		// 职位名称
-	private String remark;		// 详细描述
+	private Integer id;		// id
+	private String name;	// 部门名称
+	private String remark;	// 详细描述
 	// 无参数构造器
-	public Job() {
+	public Dept() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	// setter和getter方法
 	public void setId(Integer id){
@@ -32,7 +31,7 @@ public class Job implements java.io.Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Job [id=" + id + ", name=" + name + ", remark=" + remark + "]";
+		return "Dept [id=" + id + ", name=" + name + ", remark=" + remark + "]";
 	}
 
 }
