@@ -20,7 +20,7 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
      * @param httpServletRequest
      * @param httpServletResponse
      * @param o
-     * @return false表示不拦截，此次请求就结束了，true表示拦截，接下来会走下面两个方法
+     * @return false表示不拦截，相当于没有此拦截器，true表示拦截，接下来会走下面两个方法，然后就结束了
      * @throws Exception
      */
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {

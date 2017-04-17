@@ -16,10 +16,11 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <context:component-scan base-package="com.nmnet.controller"/>
+    <context:component-scan base-package="com.nmnet"/>
 
     <mvc:annotation-driven/>
 
+    <!--静态资源-->
     <mvc:default-servlet-handler/>
 
     <!--自定义mvc拦截器-->
