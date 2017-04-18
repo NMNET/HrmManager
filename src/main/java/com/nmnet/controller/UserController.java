@@ -6,6 +6,7 @@ import com.nmnet.util.common.HrmConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,7 +24,6 @@ public class UserController {
     @Autowired
     private HrmService hrmService;
 
-    //
     @RequestMapping(value = "/login")
     public ModelAndView login(@RequestParam("loginname") String loginname,
                               @RequestParam("password") String password,
@@ -36,6 +36,16 @@ public class UserController {
             mv.addObject("message", "用户名或密码错误，请重新输入");
             mv.setViewName("forward:/loginForm");
         }
+        return mv;
+    }
+
+    @RequestMapping(value = "user/AddUser")
+    public ModelAndView addUser(String flag,
+                                @ModelAttribute User user,
+                                ModelAndView mv) {
+
+        mv.setViewName("user/showAddUser");
+
         return mv;
     }
 
